@@ -21,3 +21,4 @@ Create a folder named _workdir_ and place all the needed files there. Change dir
 ## Notes
 
 - If you have exited the shell after configuring the environment and want to resume the work, you can reactivate the Python virtual environment by running `source .venv/bin/activate` on the repository root, instead of running the configuration script again.
+- The Martini 3 force field will be installed in the `share/gromacs/top` directory of the repository, and by default the `GMXLIB` environment variable will be set to this path. If you want to use other force fields remember to set the `GMXLIB` variable accordingly, or unset it to use the default GROMACS force fields.
