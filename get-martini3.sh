@@ -9,7 +9,7 @@ FFDIR=$GMXLIB/share/gromacs/top
 /usr/bin/mkdir -p $FFDIR
 
 # Tell GROMACS where the custom force fields are
-export GMXLIB=$GMXLIB
+export GMXLIB=$GMXLIB/share/gromacs/top
 
 # Download Martini 3 force field
 ## Particle definitions
@@ -23,3 +23,5 @@ export GMXLIB=$GMXLIB
 /usr/bin/python3 -m venv .venv # Create a virtual environment
 source .venv/bin/activate # Activate the virtual environment
 pip install -r requirements.txt # Install the required Python packages
+
+$SHELL # This keeps the envvars in the shell, allowing to run martinize2
