@@ -1,1 +1,1 @@
-# gromacs-foxp2
+# gromacs-foxp2-martini3
