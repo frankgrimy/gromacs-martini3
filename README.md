@@ -11,7 +11,7 @@
 
 - Clone this repo and change directory to it.
 - Run `./get-martini3.sh` to configure the Martini 3 environment. This will:
-  - Download the [Martini 3 force field](https://cgmartini.nl/docs/downloads/force-field-parameters/martini3/particle-definitions.html) and add a custom path for it.
+  - Download the [Martini 3 force field](https://cgmartini.nl/docs/downloads/force-field-parameters/martini3/particle-definitions.html) and add a custom path for it, inside the repo folder.
   - Create a Python virtual environment in `.venv` and install [vermouth/martinize2](https://github.com/marrink-lab/vermouth-martinize?tab=readme-ov-file#installation) and [mdtraj](https://pypi.org/project/mdtraj/) to provide DSSP functionality.
 
 ## Recommended usage
