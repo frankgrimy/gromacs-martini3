@@ -9,5 +9,6 @@ packaging==24.2
 pbr==6.1.0
 pyparsing==3.2.1
 scipy==1.15.0
+setuptools==75.8.0
 simopt==0.4.0
 vermouth==0.12.0
