@@ -1,4 +1,14 @@
 .venv
 /share/*
 *.zip
-workdir/*
+workdir/*.pdb
+workdir/*.gro
+workdir/*.xtc
+workdir/*.tpr
+workdir/*.edr
+workdir/*.log
+workdir/*.cpt
+workdir/*.trr
+workdir/*.itp
+workdir/*.top
+workdir/*.mdp
