@@ -65,22 +65,6 @@ printf "Running minimization in vacuum...${CLEAR}\n"
 gmx mdrun -v -deffnm minimization-vac
 printf "${GREEN}Running minimization in vacuum...OK${CLEAR}\n\n"
 
-# # Solvating the system
-# printf "${GREEN}Solvating the system with gmx solvate...${CLEAR}\n"
-# /usr/bin/cp ../template/water.gro .
-# gmx solvate -cp minimization-vac.gro \
-#   -cs water.gro \
-#   -radius 0.21 \
-#   -o solvated.gro
-# printf "${GREEN}Solvating the system with gmx solvate...OK${CLEAR}\n\n"
-
-# # Adding ions with insane
-# printf "${GREEN}Adding ions with insane...${CLEAR}\n"
-# insane -f solvated.gro \
-#   -o solvated_ions.gro \
-#   -p t4l_only.top \
-#   -pbc dodecahedron \
-
 # Solvating and adding ions with insane
 printf "${GREEN}Solvating and adding ions with insane...${CLEAR}\n"
 insane -f t4l_cg.gro \
