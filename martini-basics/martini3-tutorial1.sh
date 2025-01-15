@@ -104,7 +104,52 @@ gmx grompp -p t4l_only.top \
   -r t4l_cg_sol_ions.gro
 printf "${GREEN}  Generating minimization .tpr file...OK${CLEAR}\n"
 
-printf "Running minimization in water...${CLEAR}\n"
+printf "${GREEN}Running minimization in water...${CLEAR}\n"
 gmx mdrun -v -deffnm minimization
 printf "${GREEN}Running minimization in water...OK${CLEAR}\n\n"
 
+# NPT equilibration
+printf "${GREEN}Preparing NPT equilibration...${CLEAR}\n"
+
+## Replace the thermostat, barostat and add refcoord-scaling in minimization.mdp
+printf "${YELLOW}You should replace the Berendsen thermostat with the v-rescale thermostat in the minimization.mdp file.\n\
+You should also replace the Berendsen barostat with the c-rescale barostat.\n\
+Finally, you should add the refcoord-scaling = com directive.${CLEAR}\n"
+printf "${CYAN}tcoupl = v-rescale\n\
+Pcoupl = c-rescale\n\
+refcoord-scaling = com${CLEAR}\n"
+read -p "Press Enter to edit the equilibration.mdp file with nano..."
+nano equilibration.mdp
+
+printf "  Generating NPT equilibration .tpr file...${CLEAR}\n"
+gmx grompp \
+  -p t4l_only.top \
+  -c minimization.gro \
+  -f equilibration.mdp \
+  -o equilibration.tpr \
+  -r t4l_cg_sol_ions.gro
+printf "${GREEN}  Generating NPT equilibration .tpr file...OK${CLEAR}\n"
+
+printf "Running NPT equilibration...${CLEAR}\n"
+gmx mdrun -v -deffnm equilibration
+printf "${GREEN}Running NPT equilibration...OK${CLEAR}\n\n"
+
+# Production run
+printf "${GREEN}Preparing production run...${CLEAR}\n"
+gmx grompp -p t4l_only.top \
+  -c equilibration.gro \
+  -f dynamic.mdp \
+  -o dynamic.tpr
+printf "${GREEN}Preparing production run...OK${CLEAR}\n"
+
+# Ask the user if they want to run the production simulation
+
+printf "${YELLOW}Do you want to run the production simulation? It may take a LONG time:${CLEAR} "
+read -n 1 -p "Press 'y' to run the production simulation, or any other key to exit..." run_production
+if [ "$run_production" == "y" ]; then
+  printf "${GREEN}Running production simulation...${CLEAR}\n"
+  gmx mdrun -v -deffnm dynamic
+  printf "${GREEN}Running production simulation...OK${CLEAR}\n\n"
+else
+  printf "${YELLOW}Exiting...${CLEAR}\n"
+fi
