@@ -12,8 +12,7 @@ printf "${YELLOW}Remember to activate the virtual environment before running thi
 
 # Download tutorial files
 printf "${GREEN}Downloading tutorial files...${CLEAR}\n"
-#/usr/bin/wget https://cgmartini-library.s3.ca-central-1.amazonaws.com/0_Tutorials/m3_tutorials/ProteinsI/M3_proteins_tutorial_part1.zip
-cp /tmp/M3_proteins_tutorial_part1.zip ./
+/usr/bin/wget https://cgmartini-library.s3.ca-central-1.amazonaws.com/0_Tutorials/m3_tutorials/ProteinsI/M3_proteins_tutorial_part1.zip
 /usr/bin/unzip M3_proteins_tutorial_part1.zip "tutorial_2/*" -d ./
 /usr/bin/rm -rf M3_proteins_tutorial_part1.zip # Clean up
 printf "${GREEN}Downloading tutorial files...OK${CLEAR}\n\n"
