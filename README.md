@@ -26,4 +26,3 @@ You can use it as a base to verify the installation and even run your own simula
 ## Notes
 
 - If you exited the shell after configuring the environment and want to resume your work, you can reactivate the Python virtual environment by running `source .venv/bin/activate` inside the repository root, instead of re-running the configuration script.
-- The Martini 3 force field will be installed in the `share/gromacs/top` directory of the repository that is created by the script, and the `GMXLIB` environment variable will be set to this path. If you want to use other force fields remember to set the `GMXLIB` variable accordingly, or unset it to revert to the default GROMACS force fields. 
