@@ -13,3 +13,5 @@ workdir/*.itp
 workdir/*.top
 workdir/*.mdp
 martini-basics/tutorial_2/
+\#*\#
+*.xvg
