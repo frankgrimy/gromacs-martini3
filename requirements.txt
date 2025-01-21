@@ -3,7 +3,7 @@ cftime==1.6.4.post1
 insane==1.2.0
 mdtraj==1.10.2
 netCDF4==1.7.2
-networkx==3.4.2
+networkx==2.8.8
 numpy==2.2.1
 packaging==24.2
 pbr==6.1.0
