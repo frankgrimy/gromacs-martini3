@@ -1,6 +1,5 @@
 .venv
 /share/*
-*.zip
 workdir/*.pdb
 workdir/*.gro
 workdir/*.xtc
@@ -15,3 +14,4 @@ workdir/*.mdp
 martini-basics/tutorial_2/
 \#*\#
 *.xvg
+comparison/workdir
