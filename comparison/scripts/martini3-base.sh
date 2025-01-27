@@ -193,7 +193,7 @@ if [[ "$runmd" =~ ^[Yy]$ ]]; then
     gmx trjconv -fit rot+trans -s prod.tpr -f temp.xtc -o trajfitted.xtc -n index.ndx
 
     printf "\n${GREEN}Calculating the RMSD...${CLEAR}\n"
-    printf "${YELLOW}When prompted, select ${CYAN}BB${YELLOW} for the group, and ${CYAN}0${YELLOW} for System.${CLEAR}\n"
+    printf "${YELLOW}When prompted, select ${CYAN}BB${YELLOW} for the group, and ${CYAN}17${YELLOW} for output.${CLEAR}\n"
     read -p "Press Enter to continue..."
     gmx rms -f trajfitted.xtc -s prod.tpr -n index.ndx -o rmsd.xvg
     printf "${GREEN}The RMSD data has been saved to ${CYAN}rmsd.xvg\n${GREEN}You can plot it with ${CYAN}xmgrace rmsd.xvg${CLEAR}\n"
