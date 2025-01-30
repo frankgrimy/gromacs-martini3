@@ -326,7 +326,7 @@ rmsd_plot <- ggplot(rmsd, aes(x = Time)) +
   scale_color_manual(values = c("Base" = "blue", "Rescaled" = "#FF0000C0"),
                      labels = c("Base", "Reescalado"),
                      name = "Series") +
-  scale_y_continuous(limits = c(7, 14), breaks = seq(7, 14, 1)) +
+  scale_y_continuous(limits = c(0, 6), breaks = seq(0, 6, 1)) +
   labs(title = "RMSD durante Producción",
        x = "Tiempo (ns)",
        y = "RMSD (nm)") +
